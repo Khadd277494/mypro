@@ -1,0 +1,223 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: white;
+    --font-size-large: 1.8vw;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--primary-color);
+    color: #333;
+    line-height: 1.6;
+    padding: 0 5vw;
+    font-size: var(--font-size-large);
+}
+
+header {
+    background-color: #008080;
+    color: white;
+    padding: 2vw 0;
+    text-align: center;
+}
+
+header h1 {
+    margin-bottom: 1vw;
+}
+
+nav ul {
+    list-style: none;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 1.5vw;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+section {
+    margin: 2vw 0;
+}
+
+section h2 {
+    margin-bottom: 1vw;
+    color: #008080;
+}
+
+section p, section ul {
+    margin-bottom: 2vw;
+}
+
+ul li {
+    margin-bottom: 1vw;
+}
+
+section a {
+    color: #008080;
+    text-decoration: none;
+}
+
+footer {
+    text-align: center;
+    padding: 1vw 0;
+    background-color: #333;
+    color: white;
+    margin-top: 2vw;
+}
+
+.hover:hover {
+    transform: scale(1.3);
+    transition: transform 0.3s ease;
+}
+
+img {
+    max-width: 100%; /* Đảm bảo ảnh không vượt quá chiều rộng của phần tử chứa */
+    height: auto; /* Giữ tỉ lệ khung hình của ảnh */
+}
+
+img:hover {
+    transform: scale(1.02);
+    transition: transform 0.3s ease;
+    overflow: hidden;
+}
+
+@media (min-width: 1024px) {
+    body {
+        font-size: 2vw;
+    }
+
+    img {
+        max-width: 20%;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    body {
+        font-size: 1.8vw;
+    }
+
+    #about img {
+        max-width: 30%;
+    }
+}
+
+@media (max-width: 767px) {
+    nav ul {
+        flex-direction: row; /* Đặt menu nằm ngang */
+        flex-wrap: wrap; /* Cho phép các mục trong menu quấn lại */
+    }
+
+    nav ul li {
+        margin: 0 1vw; /* Giảm khoảng cách giữa các mục */
+    }
+
+    .footer-menu {
+        display: flex; /* Đặt menu chân trang nằm ngang */
+        flex-wrap: wrap; /* Cho phép các mục trong menu quấn lại */
+        justify-content: center; /* Căn giữa menu */
+    }
+
+    .footer-menu li {
+        margin: 0 1vw; /* Giảm khoảng cách giữa các mục */
+    }
+}
+
+
+.footer-menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    background-color: #333;
+}
+
+.footer-menu li {
+    display: inline-block;
+    position: relative;
+}
+
+.footer-menu li a {
+    text-decoration: none;
+    padding: 0.7vw 0.3vw;
+    color: white;
+    display: block;
+    transition: background-color 0.3s;
+}
+
+.footer-menu li a:hover {
+    background-color: #555;
+}
+
+.dropdown-content {
+    display: block;
+    position: absolute;
+    background-color: #333;
+    min-width: 6vw;
+    max-height: 0;
+    overflow: hidden;
+    transition: 1s ease-out;
+}
+
+.dropdown-content li {
+    display: block;
+}
+
+.dropdown-content li a {
+    padding: 0.5vw 0.5vw;
+    color: white;
+    text-decoration: none;
+}
+
+.dropdown-content li a:hover {
+    background-color: #555;
+}
+
+.dropdown:hover .dropdown-content {
+    max-height: 20vw;
+}
+
+#scrollToTopBtn {
+    position: fixed;
+    bottom: 0.5vw;
+    right: 0.5vw;
+    z-index: 99;
+    border: none;
+    outline: none;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #b4b49f97;
+    cursor: pointer;
+    padding: 0.75vw;
+    border-radius: 50%; 
+    font-size: 1.5vw;
+    display: none; 
+    transition: background-color 0.5s, color 0.5s; 
+}
+
+#scrollToTopBtn i {
+    font-size: 1.5vw; /* Kích thước mũi tên */
+}
+
+#scrollToTopBtn:hover {
+    background-color: rgba(255, 255, 255, 0.5); /* Nền thay đổi khi hover */
+    color: #555; /* Màu thay đổi khi hover */
+}
+
+/* Thêm responsive cho các phần khác */
+@media (max-width: 767px) {
+    #scrollToTopBtn {
+        padding: 0.5vw;
+        font-size: 0.9vw; /* Giảm kích thước nút trên màn hình nhỏ */
+    }
+}
